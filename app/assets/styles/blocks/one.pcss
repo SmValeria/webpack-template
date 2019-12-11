@@ -1,0 +1,51 @@
+div {
+    color: $text-color;
+    background-color: white;
+    @include phones {
+        background: purple;
+    }
+}
+
+.add-svg-css{
+    background: svg-load('star.svg', fill=$links-color, stroke=lightskyblue, stroke-width=2);
+    width: 150px;
+    height: 150px;
+}
+
+.edit-svg-html {
+    fill: yellowgreen;
+    width: 20%;
+}
+
+.using-var {
+    color: $links-color;
+    font-size: 2em;
+}
+
+h1 {
+    background-image: url("../images/content/2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    color: rgba($errors-color, 0.9);
+    &:before {
+        content: '*';
+    }
+    @include phones {
+        color: yellowgreen;
+    }
+}
+
+.class-for-image {
+    width: 50%;
+}
+
+.hello {
+    width: 20%;
+}
+
+p {
+    font-size: 30px;
+    color: white;
+    height: 200px;
+}

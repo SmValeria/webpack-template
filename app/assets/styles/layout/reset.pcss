@@ -1,0 +1,89 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ /* Устанавливаем размер док-та на всю высоту*/
+html,
+body {
+    height: 100%;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Убираем внешние отступы */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Убираем подчеркивание у ссылок */
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+/* Изменяем вид курсора на указатель для ссылок и кнопок */
+a,
+input[type="submit"],
+input[type="button"],
+button {
+    cursor: pointer;
+}
+
+/* Запрещаем textarea ресайзиться */
+textarea {
+    resize: none;
+}
+
+/* Удаляем зазоры в границах таблицы*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

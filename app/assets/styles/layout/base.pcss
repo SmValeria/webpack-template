@@ -1,0 +1,60 @@
+/* Устанавливаем размер шрифта док-та */
+html {
+    font-size: 16px;
+
+    @include desktop {
+        font-size: 15px;
+    }
+    @include tablets {
+        font-size: 14px;
+    }
+}
+
+/* Выставляем основные настройки для body */
+body {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 1rem;
+    color: $text-color;
+    line-height: 1.42;
+}
+
+/* Создаем обертку в которой будет все содержимое док-та */
+.wrapper {
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Центрирование контента */
+.container {
+    margin: 0 auto;
+    max-width: 1060px;
+    width: 95%;
+
+    &--full {
+        width: 100%;
+    }
+}
+
+/* Указываем понятную периодичность в потоке данных */
+.flow > * + * {
+    margin-top: 1em;
+}
+
+/* Изменяем цвет шрифта у placeholder */
+::-webkit-input-placeholder {color: rgba($text-color, 0.5);}
+::-moz-placeholder          {color: rgba($text-color, 0.5);}/* Firefox 19+ */
+:-moz-placeholder           {color: rgba($text-color, 0.5);}/* Firefox 18- */
+:-ms-input-placeholder      {color: rgba($text-color, 0.5);}
+
+/* Удаляем кастомные стрелки в input[type=number] */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}

@@ -1,0 +1,14 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Вторая страниа';
+  - var description = 'Это вторая страничка';
+
+block content
+  section
+    .col#container
+      h1 Second page
+      +image('1.jpg', 'hello class', 'girl')
+      +icon('star', 'edit-svg-html')
+      p.using-var some text here...
+      .add-svg-css

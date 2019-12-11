@@ -1,0 +1,18 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Главная страница';
+  - var description = 'Описание для главной странички';
+
+block content
+  section
+    .col#container
+      h1 First page
+      .add-svg-css
+      +image('1.jpg', 'class-for-image', 'girl')
+      +icon('star', 'edit-svg-html')
+      //- require('images/').default  default приходится дописывать в бета версии
+      //- html-webpack-plugin для корректной работы картинок
+      p(
+        style='background-image:url(' + require('images/content/1.jpg').default + ')'
+        ) some text here...

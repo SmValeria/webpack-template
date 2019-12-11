@@ -1,0 +1,12 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Hello page';
+  - var description = 'Описание для hello page';
+
+block content
+  section
+    .col#container
+      h1 Hello page
+      .add-svg-css
+      p.using-var Hello from hello page

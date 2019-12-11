@@ -1,0 +1,7 @@
+//- require('images/').default  default приходится дописывать в бета версии
+//- html-webpack-plugin для корректной работы картинок
+//- из-за этого приходится прописывать путь самостоятельно `assets/images/sprite.svg#${name}`
+mixin icon(name, className)
+  - var icon = require(`images/icons/${name}.svg`).default;
+  svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
+    use(href=`assets/images/sprite.svg#${name}`)

@@ -1,0 +1,8 @@
+//- require('images/').default  default приходится дописывать в бета версии
+//- html-webpack-plugin для корректной работы картинок
+mixin image(path, className, altText)
+  img(
+    src=require(`images/content/${path}`).default
+    class=className
+    alt=altText ? altText : path
+    )
