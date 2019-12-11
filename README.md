@@ -45,15 +45,16 @@ $ yarn имя_скрипта
 
 ## Добавить новую страницу
 
-- В папке app/pug/pages создать новый *.pug файл
-- В корне папки app создать *.js файл с таким же именем, как и *.pug предыдущего пункта
+- В папке **app/pug/pages** создать новый *.pug файл
+- В корне папки **app** создать *.js файл с таким же именем, как и *.pug предыдущего пункта
 - В *.js добавить следующий код
 ```sh
 import "./assets/styles/styles.pcss"; // добавляем файл со стилями
 
 if (process.env.NODE_ENV === "development") {
-  require("file-loader!./pug/pages/[your_file_name].pug"); // переносим pug                                                         
-}                                                          //файл для поддержки ф-ции hot reload
+  require("file-loader!./pug/pages/[your_file_name].pug"); // переносим  файл pug      
+}                                                          //для поддержки ф-ции hot reload
+                                                           // в режиме разработки
 
 import { test } from "./js/test"; // импортируем те js модули, которые нужны в данной сборке
 
@@ -64,23 +65,24 @@ test();
 ## Работа со сборкой
 
 1. Pug
-    - В папке app/pug/pages хранятся все будущие странички сайта(есть три примера)
-    - В папку app/pug/layout добавлен пример layout
-    - В папке app/pug/utils предлагается хранить все pug mixins (пример добавления svg,
-        картинок), все новые миксины следует импортировать в файл index.pug
-        , который импортирован в файл layout.
-    - В папке app/pug/sections храним блоки всех переиспользуемых секций (header, footer)
+    - В папке **app/pug/pages** хранятся все будущие странички сайта(есть три примера)
+    - В папку **app/pug/layout** добавлен пример layout
+    - В папке **app/pug/utils** предлагается хранить все pug mixins (пример добавления svg,
+        картинок), все новые миксины следует импортировать в файл **index.pug**
+        , который импортирован в файл **app/pug/layout/main.pug**.
+    - В папке **app/pug/sections** храним блоки всех переиспользуемых секций (header, footer)
 2. PostCss
-    - Все новые *.pcss блоки добавляем в app/assets/styles/blocks
-    - Файл app/assets/styles/blocks/one.pcss является примером, как работать с svg, variables
-    , mixins.pcss
-    - В файле app/assets/styles/variables.json храним все css переменные проекта
-    - В файл app/assets/styles/layout/base.pcss добавляем все общие стили для страниц
-    - Файл app/assets/styles/layout/reset.pcss
-     кастомный те, стили которыми пользуюсь из проекта в проект, можно удалить(удалить импорт и из app/assets/styles/styles.pcss)
-    - Пример подключения кастомных шрифтов в сборку app/assets/styles/layout/font.pcss
+    - Все новые *.pcss блоки добавляем в **app/assets/styles/blocks**
+    - Файл **app/assets/styles/blocks/one.pcss** является примером, как работать с **svg, variables
+    , mixins.pcss**
+    - В файле **app/assets/styles/variables.json** храним все **css-переменные** проекта
+    - В файл **app/assets/styles/layout/base.pcss** добавляем все общие стили для страниц
+    - Файл **app/assets/styles/layout/reset.pcss**
+     кастомный, стили которыми пользуюсь из проекта в проект, **можно удалить(удалить импорт и из app/assets/styles/styles.pcss)**
+    - Пример подключения кастомных шрифтов в сборку **app/assets/styles/layout/font.pcss**
 3. Картинки
-    - Все картинки храним в папке app/assets/images/content, сюда же помещаем фавикон с именем favicon.png
-    - Все svg иконки проекта храним app/assets/images/icons
+    - Все картинки храним в папке **app/assets/images/content**
+    , сюда же помещаем favicon с именем **favicon.png**
+    - Все **svg** иконки проекта храним **app/assets/images/icons**
 4. Js
-    - Все новые модули js помещаем в папку app/js
+    - Все новые модули js помещаем в папку **app/js**
